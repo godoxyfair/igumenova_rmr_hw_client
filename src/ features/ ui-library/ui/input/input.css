@@ -1,0 +1,17 @@
+input {
+    border: none;
+    border-bottom: black solid 2px;
+    background: transparent;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px gray;
+}
+
+input:valid {
+    box-shadow: 0 0 5px 1px red;
+}
