@@ -9,24 +9,11 @@ import CatPage from "./Cat-page";
 
 const LoginPage = () => {
 
-    const isAuth = useSelector((state: any) => state.user.isAuth)
+    // const isAuth = useSelector((state: any) => state.user.isAuth)
 
     return (
             <div className="app">
-                <Navbar/>
-                <div className="wrap">
-                    {!isAuth &&
-                        <Routes>
-                            <Route path="/registration" element={<Registration/>}></Route>
-                            <Route path="/auth" element={<Login/>}></Route>
-                        </Routes>
-                    }
-                    {isAuth &&
-                        <CatPage/>
-                    }
 
-                </div>
-                <Footer/>
             </div>
     );
 };

@@ -1,6 +1,7 @@
 import axios from "axios";
 import {Action, Dispatch} from "redux";
-import {setUser} from "../../reducers/userReducer";
+import {setError, setUser} from "../../reducers/userReducer";
+import {useState} from "react";
 
 
 
@@ -9,6 +10,8 @@ export type UserRegistration = {
     phone: string,
     password: string,
 }
+
+
 
 export const registration = async (email: string, phone: string, password: string) => {
     try {
@@ -46,8 +49,6 @@ export const login = (email: string, phone: string, password: string) => {
                 )
             console.log(response.data)
             dispatch(setUser(response.data))
-
-
 
         }catch (e: any) {
             alert(e.response.data.message)

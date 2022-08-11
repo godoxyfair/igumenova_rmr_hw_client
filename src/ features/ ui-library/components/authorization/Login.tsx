@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Input from "../../ui/input/Input";
 import Button from "../../ui/button/Button";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {login} from "../../../../ service/API/user";
 import {Formik} from "formik";
 import * as yup from 'yup'
@@ -16,6 +16,8 @@ const Login = () => {
         email: yup.string().required('You need write!')
 
     })
+
+
     const dispatch = useDispatch()
     return (
         <>
@@ -65,7 +67,7 @@ const Login = () => {
                         {touched.password && errors.password && <p style={{color: 'black'}}>{errors.password}</p>}
                         {/*//TODO dispatch type Argument of type '(dispatch: Dispatch) => Promise ' is not assignable to parameter of type 'AnyAction'*/}
                         <Button disabled={!isValid && !dirty} onClick={() => dispatch<any>(login(email,phone, password))}>Login</Button>
-                        {/*<img src={'http://51.250.65.73/api/v1/kitty'} className="navbar__logo" width="100px" height="100px"/>*/}
+                        <p></p>
                     </div>
                 )}
             </Formik>
