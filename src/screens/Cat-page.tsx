@@ -8,8 +8,9 @@ const CatPage = () => {
     return (
         <div>
             <div>This is your cat</div>
-            <img src={'http://51.250.65.73/api/v1/kitty'} className="navbar__logo" width="100px" height="100px"/>
-            <Footer/>
+            <img src={'http://51.250.65.73/api/v1/kitty'}
+                 className="navbar__logo"
+                 width="300px" height="300px"/>
         </div>
     );
 };

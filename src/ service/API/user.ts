@@ -2,6 +2,8 @@ import axios from "axios";
 import {Action, Dispatch} from "redux";
 import {setUser} from "../../reducers/userReducer";
 
+
+
 export type UserRegistration = {
     email: string,
     phone: string,
@@ -24,16 +26,19 @@ export const registration = async (email: string, phone: string, password: strin
 }
 
 
+
 export const login = (email: string, phone: string, password: string) => {
 
     //TODO type in dispatch?
     return async (dispatch: Dispatch)=> {
         try {
-            const response = await axios.post('http://51.250.65.73/api/v1/login', {
-                email,
-                phone,
-                password,
-            }
+            const response = await axios.post('http://51.250.65.73/api/v1/login',
+                {
+                        email,
+                        phone,
+                        password,
+                     },
+
                 // {
                 //     withCredentials: true
                 // }

@@ -5,6 +5,7 @@ import Registration from "../ features/ ui-library/components/authorization/Regi
 import Login from "../ features/ ui-library/components/authorization/Login";
 import Footer from "../ features/ ui-library/components/sticky-footer/Footer";
 import {useSelector} from "react-redux";
+import CatPage from "./Cat-page";
 
 const LoginPage = () => {
 
@@ -19,6 +20,9 @@ const LoginPage = () => {
                             <Route path="/registration" element={<Registration/>}></Route>
                             <Route path="/auth" element={<Login/>}></Route>
                         </Routes>
+                    }
+                    {isAuth &&
+                        <CatPage/>
                     }
 
                 </div>
