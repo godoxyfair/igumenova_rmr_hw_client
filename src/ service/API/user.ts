@@ -31,6 +31,7 @@ export const login = (email: string, phone: string, password: string) => {
 
     //TODO type in dispatch?
     return async (dispatch: Dispatch)=> {
+        // axios.defaults.withCredentials = true
         try {
             const response = await axios.post('http://51.250.65.73/api/v1/login',
                 {
@@ -45,8 +46,7 @@ export const login = (email: string, phone: string, password: string) => {
                 )
             console.log(response.data)
             dispatch(setUser(response.data))
-            // console.log(checkItem)
-            //const status = response.data
+
 
 
         }catch (e: any) {
@@ -64,9 +64,18 @@ export const logoutFunc = async (email: string, phone: string, password: string)
     }catch (e: any) {
         alert(e.response.data.message)
     }
-
-
 }
+
+export const getCat = async () => {
+    try {
+        const response = await axios.post('http://51.250.65.73/api/v1/kitty', {
+        })
+        alert(response.data.message)
+    }catch (e: any) {
+        alert(e.response.data.message)
+    }
+}
+
 
 
 
