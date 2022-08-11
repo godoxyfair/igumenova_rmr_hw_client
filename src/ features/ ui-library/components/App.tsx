@@ -20,9 +20,9 @@ function App() {
               <Navbar/>
               <div className="wrap">
                       <Routes>
-                          <Route path="/registration" element={<Registration/>}></Route>
-                          <Route path="/auth" element={<Login/>}></Route>
-                          <Route path="/cat" element={!isAuth ? <Login/> : <CatPage/>}></Route>
+                          <Route path="/registration" element={!isAuth && <Registration/>}></Route>
+                          <Route path="/auth" element={!isAuth ? <Login/> : <CatPage/>}></Route>
+                          <Route path="/cat" element={isAuth && <CatPage/>}></Route>
                       </Routes>
               </div>
               <Footer/>

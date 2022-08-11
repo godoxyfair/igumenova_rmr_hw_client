@@ -36,18 +36,18 @@ export const login = (email: string, phone: string, password: string) => {
     return async (dispatch: Dispatch)=> {
         // axios.defaults.withCredentials = true
         try {
-            const response = await axios.post('http://51.250.65.73/api/v1/login',
+            const response = await axios.post('/api/v1/login',
                 {
                         email,
                         phone,
                         password,
                      },
 
-                // {
-                //     withCredentials: true
-                // }
+                {
+                    withCredentials: true
+                }
                 )
-            console.log(response.data)
+            // console.log(response.data)
             dispatch(setUser(response.data))
 
         }catch (e: any) {
@@ -57,9 +57,9 @@ export const login = (email: string, phone: string, password: string) => {
 
 }
 
-export const logoutFunc = async (email: string, phone: string, password: string) => {
+export const logoutFunc = async () => {
     try {
-        const response = await axios.post('http://51.250.65.73/api/v1/logout', {
+        const response = await axios.post('/api/v1/logout', {
         })
         alert(response.data.message)
     }catch (e: any) {
@@ -67,14 +67,12 @@ export const logoutFunc = async (email: string, phone: string, password: string)
     }
 }
 
+
 export const getCat = async () => {
-    try {
-        const response = await axios.post('http://51.250.65.73/api/v1/kitty', {
+        const response = await axios.get<{data: {src: string}}>('/api/v1/kitty', {
         })
-        alert(response.data.message)
-    }catch (e: any) {
-        alert(e.response.data.message)
-    }
+        return response.data.data.src;
+
 }
 
 
