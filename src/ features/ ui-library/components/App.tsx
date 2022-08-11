@@ -1,25 +1,19 @@
 import React from 'react';
 import './App.css';
-import Navbar from "./navbar/Navbar";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Registration from "./authorization/Registration";
-import Footer from "./sticky-footer/Footer";
-import Login from "./authorization/Login";
+import LoginPage from "../../../screens/Login-page";
+import {BrowserRouter} from "react-router-dom";
+// export type RootState = ReturnType<typeof store.getState>
 
 function App() {
+
+
   return (
-      <BrowserRouter>
-        <div className="app">
-            <Navbar/>
-            <div className="wrap">
-                <Routes>
-                    <Route path="/registration" element={<Registration/>}></Route>
-                    <Route path="/auth" element={<Login/>}></Route>
-                </Routes>
-            </div>
-            <Footer/>
-        </div>
-      </BrowserRouter>
+      <>
+          <BrowserRouter>
+              <LoginPage/>
+          </BrowserRouter>
+
+      </>
   );
 }
 
