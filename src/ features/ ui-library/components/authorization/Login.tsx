@@ -65,6 +65,7 @@ const Login = () => {
                         {touched.password && errors.password && <p style={{color: 'black'}}>{errors.password}</p>}
                         {/*//TODO dispatch type Argument of type '(dispatch: Dispatch) => Promise ' is not assignable to parameter of type 'AnyAction'*/}
                         <Button disabled={!isValid && !dirty} onClick={() => dispatch<any>(login(email,phone, password))}>Login</Button>
+                        {/*<img src={'http://51.250.65.73/api/v1/kitty'} className="navbar__logo" width="100px" height="100px"/>*/}
                     </div>
                 )}
             </Formik>
