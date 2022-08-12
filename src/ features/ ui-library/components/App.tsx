@@ -11,24 +11,29 @@ import {useSelector} from "react-redux";
 
 
 function App() {
-    const isAuth = useSelector((state: any) => state.user.isAuth)
+  const isAuth = useSelector((state: any) => state.user.isAuth);
 
-    return (
-        <div className="app">
-            <BrowserRouter>
-                <Navbar/>
-                <div className="wrap">
-                    <Routes>
-                        <Route path="/registration" element={!isAuth && <Registration/>}></Route>
-                        <Route path="/auth" element={!isAuth ? <Login/> : <CatPage/>}></Route>
-                        <Route path="/cat" element={isAuth && <CatPage/>}></Route>
-                    </Routes>
-                </div>
-                <Footer/>
-            </BrowserRouter>
-
+  return (
+    <div className="app">
+      <BrowserRouter>
+        <Navbar />
+        <div className="wrap">
+          <Routes>
+            <Route
+              path="/registration"
+              element={!isAuth && <Registration />}
+            ></Route>
+            <Route
+              path="/auth"
+              element={!isAuth ? <Login /> : <CatPage />}
+            ></Route>
+            <Route path="/cat" element={isAuth && <CatPage />}></Route>
+          </Routes>
         </div>
-    );
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
