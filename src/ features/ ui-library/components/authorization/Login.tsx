@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {login} from "../../../../ service/API/user";
 import {Formik} from "formik";
 import * as yup from 'yup'
+import './authorization.css'
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -17,7 +18,7 @@ const Login = () => {
 
     })
 
-
+    const Error = useSelector((state: any) => state.user.error)
     const dispatch = useDispatch()
     return (
         <>
@@ -30,7 +31,7 @@ const Login = () => {
                     onSubmit={(values) => (console.log(values))}
                     validationSchema={validationsSchema}
             >
-                {({values, errors, touched,handleChange,handleBlur,isValid,handleSubmit, dirty}) => (
+                {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) => (
                     <div className="authorization">
                         <div className="authorization__header">Authorization</div>
                         <Input
@@ -66,8 +67,9 @@ const Login = () => {
                         />
                         {touched.password && errors.password && <p style={{color: 'black'}}>{errors.password}</p>}
                         {/*//TODO dispatch type Argument of type '(dispatch: Dispatch) => Promise ' is not assignable to parameter of type 'AnyAction'*/}
-                        <Button disabled={!isValid && !dirty} onClick={() => dispatch<any>(login(email,phone, password))}>Login</Button>
-                        <p></p>
+                        <Button disabled={!isValid && !dirty}
+                                onClick={() => dispatch<any>(login(email, phone, password))}>Login</Button>
+                        <p className="error">{Error}</p>
                     </div>
                 )}
             </Formik>

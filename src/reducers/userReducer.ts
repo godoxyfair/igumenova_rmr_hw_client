@@ -1,8 +1,7 @@
-import {Simulate} from "react-dom/test-utils";
 
 
 
-type UserState ={
+type UserState = {
     currentUser: any;
     isAuth: boolean;
     loading: boolean;
@@ -25,7 +24,7 @@ const SET_USER = "SET_USER"
 const LOGOUT = "LOGOUT"
 const SET_USER_ERROR = "SET_USER_ERROR"
 
-export default function userReducer(state = defaultState, action: UserAction) : UserState {
+export default function userReducer(state = defaultState, action: UserAction): UserState {
     switch (action.type) {
         case SET_USER:
             return {
@@ -53,6 +52,6 @@ export default function userReducer(state = defaultState, action: UserAction) : 
     }
 }
 
-export const setUser  = (user: object)=> ({type: SET_USER, payload: user})
-export const setError  = (user: object)=> ({type: SET_USER_ERROR, payload: user})
-export const logout  = () => ({type: LOGOUT})
+export const setUser = (user: object) => ({type: SET_USER, payload: user})
+export const setError = (user: object) => ({type: SET_USER_ERROR, payload: user})
+export const logout = () => ({type: LOGOUT})
