@@ -60,7 +60,6 @@ export const login = (email: string, phone: string, password: string) => {
 export const logoutFunc = async () => {
     try {
         const response = await axios.post('/api/v1/logout')
-
     } catch (e: any) {
         alert(e.response.data.message)
     }
@@ -70,6 +69,15 @@ export const logoutFunc = async () => {
 export const getCat = async () => {
     const response = await axios.get<{ data: { src: string } }>('/api/v1/kitty', {})
     return response.data.data.src;
+
+}
+
+
+export const getUserData = async () => {
+        // axios.defaults.withCredentials = true
+            const response = await axios.get<{data: {name: string}}>('/api/v1/profile', {},)
+            // console.log(response.data)
+            return response.data.data.name;
 
 }
 

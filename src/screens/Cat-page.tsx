@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {getCat} from "../ service/API/user";
-
+import './catPage.css'
 
 const CatPage = () => {
 
@@ -13,11 +13,11 @@ const CatPage = () => {
 
 
     return (
-        <div>
-            <div>This is your cat</div>
+        <div className="cat__page">
+            <div className="header_page">This is your cat &#9829;</div>
             <img src={image}
                  alt="kitty-image"
-                 className="navbar__logo"
+                 className="cat__image"
                  width="300px" height="300px"/>
         </div>
     );

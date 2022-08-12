@@ -4,7 +4,7 @@ import './footer.css'
 const Footer = () => {
     return (
         <div className="footer">
-            ddddddd
+            Home Work for RMR
         </div>
     );
 };
