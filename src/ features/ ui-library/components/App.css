@@ -19,6 +19,8 @@ body {
   align-items: center;
 }
 
+body > .wrap {height: auto; min-height: 100%;}
+
 .wrap {
   width: 100%;
   display: flex;

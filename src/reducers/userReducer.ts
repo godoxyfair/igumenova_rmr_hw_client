@@ -21,6 +21,7 @@ const SET_USER = "SET_USER";
 const LOGOUT = "LOGOUT";
 const SET_USER_ERROR = "SET_USER_ERROR";
 
+
 export default function userReducer(
   state = defaultState,
   action: UserAction

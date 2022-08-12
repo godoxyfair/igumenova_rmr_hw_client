@@ -5,17 +5,22 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import  {logout} from "../../../../reducers/userReducer";
 import { getUserData, logoutFunc} from "../../../../ service/API/user";
+import Button from "../../ui/button/Button";
 
 const Navbar = () => {
   const [name, setName] = useState("");
-
-  useEffect(() => {
-    getUserData().then((name) => setName(name));
-  }, []);
-
   const isAuth = useSelector((state: any) => state.user.isAuth);
+  //TODO fetch получает данные раньше логина и не ловит имя
+  //TODO слишком дофига раз срабатывает
+  useEffect(() => {
+    isAuth && getUserData().then((name) => setName(name));
+  }, );
+
+
   const dispatch = useDispatch();
 
+
+  // isAuth && getUserData().then((name) => setName(name))
   return (
     <div className="navbar">
       <div className="container">
@@ -39,16 +44,17 @@ const Navbar = () => {
         )}
         {isAuth && <div className="navbar__username">Welcome back {name}!</div>}
         {isAuth && (
-          <div
-            className="navbar__registration"
-            style={{ fontWeight: "700" }}
+          <Button
+              disabled={false}
+            // className="navbar__logout"
+            //style={{ fontWeight: "700" }}
             onClick={() => {
               dispatch<any>(logout());
               logoutFunc();
             }}
           >
             Logout
-          </div>
+          </Button>
         )}
       </div>
     </div>

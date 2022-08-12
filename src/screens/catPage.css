@@ -3,6 +3,21 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  transition: 2s; /*Скорость перехода состояния элемента*/
+  animation: show 1s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes show{
+
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
 }
 
 .header_page {
@@ -13,4 +28,8 @@
 
 .cat__image {
   margin: 20px;
+}
+
+.cat__image:hover {
+  box-shadow: 0 0 20px #B3B278;
 }

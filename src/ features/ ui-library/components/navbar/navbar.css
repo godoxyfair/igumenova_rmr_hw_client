@@ -30,7 +30,7 @@
 }
 
 
-.navbar__registration {
+.navbar__registration, .navbar__logout{
     margin-right: 10px;
     text-decoration: none;
     color: black;
@@ -42,6 +42,17 @@
 
 .navbar__registration:hover {
     color: red;
+}
+
+.navbar__logout {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+}
+
+.navbar__logout:hover {
+
 }
 
 .container {
