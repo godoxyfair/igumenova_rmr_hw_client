@@ -15,7 +15,7 @@ const Registration = () => {
             <Input value={phone} setValue={setPhone} type="text" placeholder="Phone number"/>
             <Input type="text" placeholder="Name"/>
             <Input value={password} setValue={setPassword} type="password" placeholder="Password"/>
-            <Button disabled={false} onClick={() => registration(email,phone,password)} >Registration</Button>
+            <Button  type="submit" onClick={() => registration(email,phone,password)} >Registration</Button>
         </div>
     );
 };

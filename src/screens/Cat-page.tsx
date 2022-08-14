@@ -9,12 +9,12 @@ const CatPage = () => {
     getCat().then((src) => setImage(src));
   }, []);
 
-    const [name, setName] = useState("");
-
-
-    useEffect(() => {
-        getUserData().then((name) => setName(name));
-    }, []);
+    // const [name, setName] = useState("");
+    //
+    //
+    // useEffect(() => {
+    //     getUserData().then((name) => setName(name));
+    // }, []);
 
 
   return (

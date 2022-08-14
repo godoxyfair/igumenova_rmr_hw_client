@@ -5,7 +5,7 @@ import './button.css'
 type Props = {
     children?: ReactNode
     onClick: () => void;
-    disabled: boolean;
+    type: any
 }
 
 const Button = ({children, ...props}: Props) => {

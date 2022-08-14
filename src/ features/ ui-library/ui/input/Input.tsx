@@ -1,10 +1,6 @@
 import React from 'react';
 import './input.css'
 
-// export type InputProps = {
-//     props?: string
-// }
-
 
 const Input = (props: any) => {
     return (
@@ -12,6 +8,7 @@ const Input = (props: any) => {
             onChange={(event) => props.setValue(event.target.value)}
             value={props.value}
             type={props.type}
+            name = {props.name}
             placeholder={props.placeholder}
         />
     );

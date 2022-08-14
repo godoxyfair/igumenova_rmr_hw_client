@@ -45,9 +45,7 @@ const Navbar = () => {
         {isAuth && <div className="navbar__username">Welcome back {name}!</div>}
         {isAuth && (
           <Button
-              disabled={false}
-            // className="navbar__logout"
-            //style={{ fontWeight: "700" }}
+              type="button"
             onClick={() => {
               dispatch<any>(logout());
               logoutFunc();
