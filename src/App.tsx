@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import Footer from "./ features/components/sticky-footer/Footer";
 import Navbar from "./ features/components/navbar/Navbar";
 import Registration from "./ features/components/authorization/Registration";
@@ -10,7 +10,7 @@ import LoginPage from "./screens/Login-page";
 
 function App() {
   const isAuth = useSelector((state: any) => state.user.isAuth);
-
+//TODO path вынести в константы
   return (
     <div className="app">
       <BrowserRouter>
@@ -23,9 +23,9 @@ function App() {
             ></Route>
             <Route
               path="/auth"
-              element={!isAuth ? <LoginPage /> : <CatPage />}
+              element={!isAuth ? <LoginPage /> : <Navigate to={"/cat"}/>}
             ></Route>
-            <Route path="/cat" element={isAuth && <CatPage />}></Route>
+            <Route path="/cat" element={isAuth ? <CatPage /> : <Navigate to={"/auth"}/> }></Route>
           </Routes>
         </div>
         <Footer />

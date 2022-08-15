@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Dispatch } from "redux";
 import { setError, setUser } from "../../reducers/userReducer";
+import {apiKitty, apiLogin, apiLogout, apiProfile} from "./userEndpoint";
 
 // export type UserRegistration = {
 //   email: string;
@@ -8,10 +9,6 @@ import { setError, setUser } from "../../reducers/userReducer";
 //   password: string;
 // };
 
-const apiLogin = "/api/v1/login";
-const apiLogout = "/api/v1/logout";
-const apiKitty = "/api/v1/kitty";
-const apiProfile = "/api/v1/profile";
 
 export const registration = async (
   email: string,
@@ -58,7 +55,7 @@ export const logoutFunc = async () => {
     alert(e.response.data.message);
   }
 };
-
+//TODO kittyDTO type data: { src: string }
 export const getCat = async () => {
   const response = await axios.get<{ data: { src: string } }>(apiKitty, {});
   return response.data.data.src;

@@ -1,5 +1,5 @@
 import Button from "../../../ ui-library/button/Button";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { login} from "../../ service/API/user";
 import './authorization.css'
 import {useForm} from "react-hook-form";
@@ -10,7 +10,7 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm({
-    mode: "onChange",
+    mode: "onBlur",
   });
 
   const onSubmit = async (data: any) => {
