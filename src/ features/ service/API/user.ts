@@ -3,12 +3,16 @@ import {Dispatch} from "redux";
 import {setError, setUser} from "../../reducers/userReducer";
 
 
-export type UserRegistration = {
-  email: string;
-  phone: string;
-  password: string;
-};
+// export type UserRegistration = {
+//   email: string;
+//   phone: string;
+//   password: string;
+// };
 
+const apiLogin = "/api/v1/login"
+const apiLogout = "/api/v1/logout"
+const apiKitty = "/api/v1/kitty"
+const apiProfile = "/api/v1/profile"
 
 export const registration = async (
   email: string,
@@ -17,7 +21,7 @@ export const registration = async (
 ) => {
   try {
     const response = await axios.post(
-      "http://51.250.65.73/api/v1/registration",
+      "/api/v1/registration",
       {
         email,
         phone,
@@ -37,7 +41,7 @@ export const login = (email: string, phone: string, password: string) => {
     // axios.defaults.withCredentials = true
     try {
       const response = await axios.post(
-        "/api/v1/login",
+          apiLogin,
         {
           email,
           phone,
@@ -59,7 +63,7 @@ export const login = (email: string, phone: string, password: string) => {
 
 export const logoutFunc = async () => {
   try {
-    const response = await axios.post("/api/v1/logout");
+    await axios.post(apiLogout);
   } catch (e: any) {
     alert(e.response.data.message);
   }
@@ -68,7 +72,7 @@ export const logoutFunc = async () => {
 
 export const getCat = async () => {
   const response = await axios.get<{ data: { src: string } }>(
-    "/api/v1/kitty",
+      apiKitty,
     {}
   );
   return response.data.data.src;
@@ -78,7 +82,7 @@ export const getCat = async () => {
 export const getUserData = async () => {
   // axios.defaults.withCredentials = true
   const response = await axios.get<{ data: { name: string } }>(
-    "/api/v1/profile",
+      apiProfile,
     {}
   );
   // console.log(response.data)

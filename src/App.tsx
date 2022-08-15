@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Footer from "./sticky-footer/Footer";
-import Navbar from "./navbar/Navbar";
-import Registration from "./authorization/Registration";
-import Login from "./authorization/Login";
-import CatPage from "../../../screens/Cat-page";
+import Footer from "./ features/components/sticky-footer/Footer";
+import Navbar from "./ features/components/navbar/Navbar";
+import Registration from "./ features/components/authorization/Registration";
+import CatPage from "./screens/Cat-page";
 import {useSelector} from "react-redux";
-// export type RootState = ReturnType<typeof store.getState>
+import LoginPage from "./screens/Login-page";
 
 
 function App() {
@@ -25,7 +24,7 @@ function App() {
             ></Route>
             <Route
               path="/auth"
-              element={!isAuth ? <Login /> : <CatPage />}
+              element={!isAuth ? <LoginPage /> : <CatPage />}
             ></Route>
             <Route path="/cat" element={isAuth && <CatPage />}></Route>
           </Routes>

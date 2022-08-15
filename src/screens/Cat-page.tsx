@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getCat, getUserData} from "../ service/API/user";
+import {getCat} from "../ features/ service/API/user";
 import './catPage.css'
 
 const CatPage = () => {
@@ -22,7 +22,7 @@ const CatPage = () => {
       <div className="header_page">This is your cat &#9829;</div>
       <img
         src={image}
-        alt="kitty-image"
+        alt="kitty"
         className="cat__image"
         width="300px"
         height="300px"

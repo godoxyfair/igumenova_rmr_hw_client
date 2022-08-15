@@ -4,8 +4,8 @@ import './button.css'
 
 type Props = {
     children?: ReactNode
-    onClick: () => void;
-    type: any
+    onClick?: () => void;
+
 }
 
 const Button = ({children, ...props}: Props) => {

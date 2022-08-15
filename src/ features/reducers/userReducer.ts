@@ -1,7 +1,6 @@
 type UserState = {
   currentUser: any;
   isAuth: boolean;
-  loading: boolean;
   error: null | string;
 };
 
@@ -13,7 +12,6 @@ type UserAction = {
 const defaultState: UserState = {
   currentUser: {},
   isAuth: false,
-  loading: false,
   error: null,
 };
 

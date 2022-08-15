@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import './navbar.css'
-import logo from '../../../../assets/img/RMDIcon.jpeg'
+import logo from '../../../assets/img/RMDIcon.jpeg'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import  {logout} from "../../../../reducers/userReducer";
-import { getUserData, logoutFunc} from "../../../../ service/API/user";
-import Button from "../../ui/button/Button";
+import  {logout} from "../../reducers/userReducer";
+import { getUserData, logoutFunc} from "../../ service/API/user";
+import Button from "../../../ ui-library/button/Button";
 
 const Navbar = () => {
   const [name, setName] = useState("");
   const isAuth = useSelector((state: any) => state.user.isAuth);
-  //TODO fetch получает данные раньше логина и не ловит имя
-  //TODO слишком дофига раз срабатывает
+
   useEffect(() => {
     isAuth && getUserData().then((name) => setName(name));
   }, );
@@ -19,8 +18,6 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
 
-
-  // isAuth && getUserData().then((name) => setName(name))
   return (
     <div className="navbar">
       <div className="container">
@@ -45,7 +42,7 @@ const Navbar = () => {
         {isAuth && <div className="navbar__username">Welcome back {name}!</div>}
         {isAuth && (
           <Button
-              type="button"
+
             onClick={() => {
               dispatch<any>(logout());
               logoutFunc();
