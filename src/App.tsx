@@ -1,13 +1,12 @@
-import React from 'react';
-import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./ features/components/sticky-footer/Footer";
 import Navbar from "./ features/components/navbar/Navbar";
 import Registration from "./ features/components/authorization/Registration";
 import CatPage from "./screens/Cat-page";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import LoginPage from "./screens/Login-page";
-
 
 function App() {
   const isAuth = useSelector((state: any) => state.user.isAuth);

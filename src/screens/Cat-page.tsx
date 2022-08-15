@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {getCat} from "../ features/ service/API/user";
-import './catPage.css'
+import React, { useEffect, useState } from "react";
+import { getCat } from "../ features/ service/API/user";
+import "./catPage.css";
 
 const CatPage = () => {
   const [image, setImage] = useState("");
@@ -8,14 +8,6 @@ const CatPage = () => {
   useEffect(() => {
     getCat().then((src) => setImage(src));
   }, []);
-
-    // const [name, setName] = useState("");
-    //
-    //
-    // useEffect(() => {
-    //     getUserData().then((name) => setName(name));
-    // }, []);
-
 
   return (
     <div className="cat__page">

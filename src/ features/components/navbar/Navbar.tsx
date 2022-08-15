@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import './navbar.css'
-import logo from '../../../assets/img/RMDIcon.jpeg'
-import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import  {logout} from "../../reducers/userReducer";
-import { getUserData, logoutFunc} from "../../ service/API/user";
+import React, { useEffect, useState } from "react";
+import "./navbar.css";
+import logo from "../../../assets/img/RMDIcon.jpeg";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../reducers/userReducer";
+import { getUserData, logoutFunc } from "../../ service/API/user";
 import Button from "../../../ ui-library/button/Button";
 
 const Navbar = () => {
@@ -13,8 +13,7 @@ const Navbar = () => {
 
   useEffect(() => {
     isAuth && getUserData().then((name) => setName(name));
-  }, );
-
+  });
 
   const dispatch = useDispatch();
 
@@ -42,7 +41,6 @@ const Navbar = () => {
         {isAuth && <div className="navbar__username">Welcome back {name}!</div>}
         {isAuth && (
           <Button
-
             onClick={() => {
               dispatch<any>(logout());
               logoutFunc();

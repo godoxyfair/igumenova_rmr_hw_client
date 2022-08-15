@@ -8,16 +8,13 @@
   animation-fill-mode: forwards;
 }
 
-
-@keyframes show{
-
-  0%{
+@keyframes show {
+  0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
-
 }
 
 .header_page {
@@ -31,5 +28,5 @@
 }
 
 .cat__image:hover {
-  box-shadow: 0 0 20px #B3B278;
+  box-shadow: 0 0 20px #b3b278;
 }
