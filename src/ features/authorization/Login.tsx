@@ -1,6 +1,6 @@
-import Button from "../../../ ui-library/button/Button";
+import Button from "../../ ui-library/button/Button";
 import { useDispatch, useSelector} from "react-redux";
-import { login} from "../../ service/API/user";
+import { login} from "../ service/API/userAPI";
 import './authorization.css'
 import {useForm} from "react-hook-form";
 

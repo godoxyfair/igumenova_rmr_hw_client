@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./authorization.css";
-import Input from "../../../ ui-library/input/Input";
-import Button from "../../../ ui-library/button/Button";
-import { registration } from "../../ service/API/user";
+import Input from "../../ ui-library/input/Input";
+import Button from "../../ ui-library/button/Button";
+import { registration } from "../ service/API/userAPI";
 const Registration = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");

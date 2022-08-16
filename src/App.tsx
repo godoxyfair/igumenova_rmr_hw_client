@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import Footer from "./ features/components/sticky-footer/Footer";
-import Navbar from "./ features/components/navbar/Navbar";
-import Registration from "./ features/components/authorization/Registration";
+import Footer from "./ features/sticky-footer/Footer";
+import Navbar from "./ features/navbar/Navbar";
+import Registration from "./ features/authorization/Registration";
 import CatPage from "./screens/Cat-page";
 import { useSelector } from "react-redux";
 import LoginPage from "./screens/Login-page";

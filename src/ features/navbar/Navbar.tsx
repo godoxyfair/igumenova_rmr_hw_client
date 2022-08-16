@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.css";
-import logo from "../../../assets/img/RMDIcon.jpeg";
+import logo from "../../assets/img/RMDIcon.jpeg";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../reducers/userReducer";
-import { getUserData, logoutFunc } from "../../ service/API/user";
-import Button from "../../../ ui-library/button/Button";
+import { logout } from "../user/userReducer";
+import { getUserData, logoutFunc } from "../ service/API/userAPI";
+import Button from "../../ ui-library/button/Button";
 
 const Navbar = () => {
   const [name, setName] = useState("");
@@ -13,7 +13,7 @@ const Navbar = () => {
 
   useEffect(() => {
     isAuth && getUserData().then((name) => setName(name));
-  });
+  }, [isAuth]);
 
   const dispatch = useDispatch();
 

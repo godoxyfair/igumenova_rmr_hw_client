@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCat } from "../ features/ service/API/user";
+import { getCat } from "../ features/ service/API/userAPI";
 import "./catPage.css";
 
 const CatPage = () => {

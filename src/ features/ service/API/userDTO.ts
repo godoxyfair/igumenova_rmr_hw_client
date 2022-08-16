@@ -1,8 +1,8 @@
 
-export type dataKitty ={
+export type KittyDTO ={
         src: string;
 }
 
-export type dataProfile = {
+export type UserProfileDTO = {
     name: string
 }
