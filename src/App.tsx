@@ -11,6 +11,7 @@ import LoginPage from "./screens/Login-page";
 function App() {
   const isAuth = useSelector((state: any) => state.user.isAuth);
 //TODO path вынести в константы
+  //TODO не выкупаю как
   return (
     <div className="app">
       <BrowserRouter>
