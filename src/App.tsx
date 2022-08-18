@@ -7,6 +7,7 @@ import Registration from "./ features/authorization/Registration";
 import CatPage from "./screens/Cat-page";
 import { useSelector } from "react-redux";
 import LoginPage from "./screens/Login-page";
+import ProtectedRoutes from "./ features/routes/ProtectedRoutes";
 
 function App() {
   const isAuth = useSelector((state: any) => state.user.isAuth);
@@ -24,7 +25,7 @@ function App() {
             ></Route>
             <Route
               path="/auth"
-              element={!isAuth ? <LoginPage /> : <Navigate to={"/cat"} />}
+              element={<ProtectedRoutes><LoginPage /></ProtectedRoutes>}
             ></Route>
             <Route
               path="/cat"
