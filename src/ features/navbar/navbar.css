@@ -1,4 +1,3 @@
-/*@import "src/ features/utils/colors";*/
 
 .navbar {
     display: flex;
@@ -30,7 +29,7 @@
 }
 
 
-.navbar__registration, .navbar__logout{
+.navbar__registration {
     margin-right: 10px;
     text-decoration: none;
     color: black;
@@ -44,16 +43,6 @@
     color: red;
 }
 
-.navbar__logout {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: red;
-    color: white;
-}
-
-.navbar__logout:hover {
-
-}
 
 .container {
     width: 100%;

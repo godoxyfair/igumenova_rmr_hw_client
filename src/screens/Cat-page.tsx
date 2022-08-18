@@ -16,8 +16,8 @@ const CatPage = () => {
         src={image}
         alt="kitty"
         className="cat__image"
-        width="300px"
-        height="300px"
+        width="500px"
+        height="500px"
       />
     </div>
   );
