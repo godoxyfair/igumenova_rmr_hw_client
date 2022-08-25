@@ -1,3 +1,12 @@
+# Getting start Docker
+
+Чтобы собрать контейнер
+`docker-compose up --build`
+
+Остановить контейнер
+`docker-compose down`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -25,6 +25,14 @@ const RoutePath = () => {
           </AnonymousRoutes>
         }
       ></Route>
+        <Route
+            path="*"
+            element={
+                <AnonymousRoutes>
+                    <LoginPage />
+                </AnonymousRoutes>
+            }
+        ></Route>
       <Route
         path="/cat"
         element={
